@@ -1,0 +1,23 @@
+class Person:
+    def __init__(self, Person_name:str,date_of_Birth:int,hight:int,weight:str ):
+        self.__person_name = Person_name
+        self.date_of_Birth=date_of_Birth
+        self.hight=hight
+        self.weight=weight
+    def _display(self):
+        print(self.person_name)
+        print(self.date_of_Birth)
+        print(self.hight)
+        print(self.weight)
+        
+    def get_Name(self):
+        return self.__person_name
+    def set_Name(self,person_name,weight):
+        self.person_name = person_name
+        self.weight=weight
+    
+
+if __name__ == '__main__':
+    person_1=Person("Akash",12-13-29,5.30,"50kg")
+    print(person_1.get_Name())
+    print(person_1._display())
