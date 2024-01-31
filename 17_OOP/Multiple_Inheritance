@@ -1,0 +1,55 @@
+class Human:
+    def __init__(self, num_nose: int, num_eyes: int):
+        self.num_nose = num_nose
+        self.num_eyes = num_eyes
+
+    def eat(self):
+        print("I eat Rice")
+        print("I am from Human class")
+
+    def work(self):
+        print("I can Do Work")
+        print("I am from Human class")
+
+    def speak(self):
+        print("I can speak")
+
+    def display(self):
+        print(self.name)
+        print(self.age)
+
+
+class Male:
+    def __init__(self, name: str):
+        self.name = name
+
+    def flirt(self):
+        print("I can Flirt")
+
+    def work(self):
+        print("I can Do Work")
+        print("I am From Male class")
+
+
+class Boy(Human, Male):
+    def __init__(self, num_nose: int, num_eyes: int, name: str, id: int):
+        Human.__init__(self, num_nose, num_eyes)
+        Male.__init__(self, name)
+        self.id = id
+
+    def work(self):
+        super().work()
+        print("I can Do Work")
+        print("I am from Boy class")
+
+    def display(self):
+        print(self.name)
+        print(self.id)
+        print(self.num_eyes)
+        print(self.num_nose)
+
+
+boy_1 = Boy(2, 2, "Akash", 5688)
+boy_1.work()
+boy_1.flirt()
+boy_1.display()
