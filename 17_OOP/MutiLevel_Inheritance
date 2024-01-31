@@ -1,0 +1,39 @@
+class Human:
+    def __init__(self,number_eyes,number_hand):
+        self.number_eyes=number_eyes
+        self.number_hand =number_hand
+     
+    def eat(self):
+        print("I can Eat")
+    def work(self):
+        print("I can Work")
+class Male(Human):
+    def __init__(self, number_eyes, number_hand,Age):
+        Human.__init__(self,number_eyes, number_hand)
+        self.Age=Age
+    def sleep(self):
+        print("Sleeping is My favourite Exercise")
+class Boy(Male):
+    def __init__(self, number_eyes, number_hand, Age,id):
+        Male.__init__(self,number_eyes, number_hand, Age)
+        self.id=id
+    def work(self):
+        Male.work(self)
+        print("I can Code")
+class Programmer(Boy):
+    def __init__(self, number_eyes:int, number_hand:int, Age:int, id:int,language:str):
+        Boy.__init__(self,number_eyes, number_hand, Age, id)
+        self.language=language
+    def work(self):
+        print("I can Write Programmer")
+    def display(self):
+        print(self.id)
+        print(self.Age)
+        print(self.number_eyes)
+        print(self.number_hand)
+        print(self.language)
+pro_1=Programmer(2,2,23,5688,"python")
+# boy_1=Boy()
+# boy_1.work()
+pro_1.display()
+print(Programmer.mro())
