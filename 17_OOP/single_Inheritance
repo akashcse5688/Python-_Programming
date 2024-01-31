@@ -1,0 +1,29 @@
+class Human:
+    def __init__(self,name:str):
+        print("I am call from Human class")
+        self.name =name
+    def eat(self):
+        print("I eat Rice")
+        print("I am from Human class")
+    def work(self):
+        print("I can Do Work")
+    def speak(self):
+        print("I can speak")
+    def display(self):
+        print(self.name)
+        print(self.age)
+class Male(Human):
+#name+#Age
+     def __init__(self,name:str,age:int):
+         Human.__init__(self,name)
+         self.age = age
+         print("I can flirt")
+     def eat(self):
+        #Human.speak(self)
+        super().speak()
+        print("I eat Rice")
+        print("I am from Male class")
+
+male_1=Male("AKASH",23)
+male_1.work()
+male_1.display()
